@@ -39,7 +39,7 @@ Order By (trip_duration) DESC
 ---    5. Mean tip by hour.
 
 SELECT  distinct datepart(HOUR, [lpep_pickup_datetime]) as hour_in_day, 
-round(avg(Tip_amount) over(partition by datepart(HOUR, [lpep_pickup_datetime])),2,2) as avg_tip
+round(avg(Tip_amount) over(partition by datepart(HOUR, [lpep_pickup_datetime])), 1) as avg_tip
 FROM sep_oct
 Order By 1
  
